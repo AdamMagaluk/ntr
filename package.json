@@ -1,15 +1,32 @@
 {
-  "name": "c-test",
-  "version": "0.0.0",
-  "main": "index.js",
+  "name": "ntr",
+  "version": "0.0.1",
+  "main": "task.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Adam Magaluk <AdamMagaluk@gmail.com>",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "jake": "~0.7.9",
     "async": "~0.2.10"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "description": "Node task runner.",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AdamMagaluk/ntr.git"
+  },
+  "keywords": [
+    "task",
+    "runner",
+    "dependancy",
+    "dependancies"
+  ],
+  "bugs": {
+    "url": "https://github.com/AdamMagaluk/ntr/issues"
+  },
+  "homepage": "https://github.com/AdamMagaluk/ntr"
 }

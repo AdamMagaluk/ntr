@@ -1,6 +1,6 @@
 var path = require('path');
 
-var task = require('./task');
+var task = require('../task');
 
 var cfiles = ['file_a.c','file_b.c'];
 
