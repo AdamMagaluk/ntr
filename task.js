@@ -80,7 +80,7 @@ Task.prototype._runTask = function(task,cb){
     
     var obj = {};
     for(var key in self._exts){
-      obj[key] = self._exts[key];
+      obj[key] = self._exts[key].bind(obj);
     }
 
     obj.name = task.name;
