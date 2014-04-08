@@ -4,7 +4,10 @@ var task = require('../task');
 
 var cfiles = ['file_a.c','file_b.c'];
 
+function toBuildDir(){}
+
 task()
+  .extend('toBuildDir',toBuildDir)
   .env({gcc : '/usr/bin/gcc',cflags : '-Wall '})
   .add('somelib.a',cfiles,compileLib)
   .add('main.hex',['somelib.a','arduino.a'],compileLib)

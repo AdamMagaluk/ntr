@@ -7,12 +7,18 @@ module.exports = function task(){
 
 function Task(){
   this._env = {};
+  this._exts = {};
   this._tasks = [];
   this._finishedCb = null;
 };
 
 Task.prototype.env = function(env){
   this._env = env;
+  return this;
+};
+
+Task.prototype.extend = function(key,func){
+  this._exts[key] = func;
   return this;
 };
 
@@ -71,12 +77,15 @@ Task.prototype._runTask = function(task,cb){
       return cb(err);
 
     task.started = new Date();
+    
+    var obj = {};
+    for(var key in self._exts){
+      obj[key] = self._exts[key];
+    }
 
-    var obj = {
-      name : task.name,
-      deps : task.deps,
-      env : self._env
-    };
+    obj.name = task.name;
+    obj.deps = task.deps;
+    obj.env = self._env;
 
     task.func.call(obj,function(err){
       task.ran = new Date();
